@@ -63,7 +63,13 @@ The owner is exploring a **one-time software and source-code handoff**, subject 
 Once this repository is published, open an issue titled **Technical evaluation** to start a conversation. Describe your use case in general terms only. Do not attach workflows, credentials, customer data or confidential business logic. Any evaluation involving your data should run on infrastructure you control.
 
 ## Attribution and release status
-
 FlowProof is independent and is not affiliated with or endorsed by n8n. The example does not bundle n8n.
 
-Public-release preparation draft. The owner must approve the publication scope and license terms before upload. No license to the private FlowProof codebase is granted by this showcase.
+Copyright 2026. All rights reserved.
+
+This public showcase is provided for technical evaluation only. No license to the private FlowProof product is granted.
+FlowProof is independent and is not affiliated with or endorsed by n8n. The example does not bundle n8n.
+
+Copyright 2026. All rights reserved.
+
+This public showcase is provided for technical evaluation only. No license to the private FlowProof product is granted. The owner must approve the publication scope and license terms before upload. No license to the private FlowProof codebase is granted by this showcase.
