@@ -1,0 +1,9 @@
+{
+  "name": "flowproof-public-demo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A narrow, offline example of detecting duplicate mocked requests.",
+  "engines": { "node": ">=22" },
+  "scripts": { "demo": "node demo.mjs", "test": "node --test demo.test.mjs" }
+}

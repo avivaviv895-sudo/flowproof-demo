@@ -1,0 +1,6 @@
+{
+  "name": "Repeated delivery must not attempt a second welcome",
+  "repeats": 2,
+  "expectedRequestCount": 1,
+  "mock": { "status": 200, "body": { "id": "synthetic-message-001" } }
+}

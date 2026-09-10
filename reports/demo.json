@@ -1,0 +1,63 @@
+{
+  "mode": "narrow-offline-showcase",
+  "status": "failed",
+  "gate": "stopped",
+  "workflowHash": "faa15f97107554d887c21c9aaae71d8d3ae99a771ba9892f00e134fe9c340af0",
+  "contractHash": "578971ad252905204aacc1b9ec3134a1b7a50b889a902ed012ec328240aff7dc",
+  "assertion": {
+    "type": "requestCount",
+    "expected": 1,
+    "actual": 2,
+    "passed": false
+  },
+  "requests": [
+    {
+      "node": "Send welcome",
+      "repetition": 1,
+      "method": "POST",
+      "url": "https://mail.example.test/send",
+      "body": {
+        "leadId": "synthetic-001",
+        "email": "alex@example.test"
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "id": "synthetic-message-001"
+        }
+      },
+      "mocked": true
+    },
+    {
+      "node": "Send welcome",
+      "repetition": 2,
+      "method": "POST",
+      "url": "https://mail.example.test/send",
+      "body": {
+        "leadId": "synthetic-001",
+        "email": "alex@example.test"
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "id": "synthetic-message-001"
+        }
+      },
+      "mocked": true
+    }
+  ],
+  "output": [
+    {
+      "id": "synthetic-message-001"
+    },
+    {
+      "id": "synthetic-message-001"
+    }
+  ],
+  "limitations": [
+    "Not native n8n execution. Only this documented two-node subset is interpreted.",
+    "Counts mocked attempts, not real message delivery or provider deduplication.",
+    "No persistent deduplication store is present. Repeats reuse the same literal payload.",
+    "Passing this test does not certify workflow correctness, security or production readiness."
+  ]
+}

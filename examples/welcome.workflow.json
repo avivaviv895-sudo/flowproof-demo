@@ -1,0 +1,24 @@
+{
+  "name": "FlowProof showcase: one welcome request per execution",
+  "active": false,
+  "nodes": [
+    {
+      "id": "start", "name": "Start",
+      "type": "n8n-nodes-base.manualTrigger", "typeVersion": 1,
+      "position": [0, 0], "parameters": {}
+    },
+    {
+      "id": "welcome", "name": "Send welcome",
+      "type": "n8n-nodes-base.httpRequest", "typeVersion": 4.2,
+      "position": [250, 0],
+      "parameters": {
+        "method": "POST", "url": "https://mail.example.test/send",
+        "sendBody": true, "specifyBody": "json",
+        "jsonBody": "{\"leadId\":\"synthetic-001\",\"email\":\"alex@example.test\"}",
+        "options": {}
+      }
+    }
+  ],
+  "connections": { "Start": { "main": [[{ "node": "Send welcome", "type": "main", "index": 0 }]] } },
+  "settings": { "executionOrder": "v1" }
+}
