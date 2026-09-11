@@ -11,7 +11,7 @@ const exactKeys = (value, keys) => {
 };
 const empty = value => isDeepStrictEqual(value, {});
 
-// Deliberately NOT the FlowProof product engine or an n8n runtime.
+// Deliberately NOT the FlowWitness product engine or an n8n runtime.
 // Accepts only a two-node Manual Trigger -> HTTP Request example with a literal JSON body.
 export function runDemo(workflow, contract) {
   const requests = [];
@@ -77,9 +77,9 @@ export function runDemo(workflow, contract) {
 export function renderReport(result) {
   const escape = value => String(value).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const assertion = result.assertion;
-  return `<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FlowProof reproducible example</title>
+  return `<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FlowWitness reproducible example</title>
   <style>body{margin:0;background:#0d1018;color:#f2f0fa;font:18px/1.6 system-ui,sans-serif}main{max-width:960px;margin:auto;padding:48px 24px}h1{font-size:44px;line-height:1.15}.tag{color:#b399ff}strong{color:#ff8ea5}table{border-collapse:collapse;width:100%;margin:28px 0}th,td{border-bottom:1px solid #3e4250;padding:15px;text-align:left}pre{padding:20px;background:#171c27;overflow:auto;font-size:14px}a{color:#b399ff}li{margin-bottom:8px}</style>
-  <main><p class="tag">FlowProof / reproducible offline example</p><h1>A completed execution can still fail its business expectation.</h1><p>Observed result: <strong>${escape(result.status.toUpperCase())}</strong>. Gate: ${escape(result.gate)}.</p>
+  <main><p class="tag">FlowWitness / reproducible offline example</p><h1>A completed execution can still fail its business expectation.</h1><p>Observed result: <strong>${escape(result.status.toUpperCase())}</strong>. Gate: ${escape(result.gate)}.</p>
   ${assertion?`<table><tr><th>Assertion</th><th>Expected</th><th>Observed</th></tr><tr><td>Mocked welcome requests</td><td>${assertion.expected}</td><td>${assertion.actual}</td></tr></table>`:`<p>${escape(result.error)}</p>`}
   <h2>Scope matters</h2><ul>${(result.limitations??[]).map(x=>`<li>${escape(x)}</li>`).join('')}</ul>
   <h2>Generated execution evidence</h2><p>This JSON is produced by running the example. It is not a preloaded success/failure fixture.</p><pre>${escape(JSON.stringify(result,null,2))}</pre><p>Reproduce with <code>npm run demo</code>. Exit 1 is the intentional failed assertion. See README.md.</p></main></html>`;
