@@ -2,7 +2,7 @@
   "mode": "narrow-offline-showcase",
   "status": "failed",
   "gate": "stopped",
-  "workflowHash": "faa15f97107554d887c21c9aaae71d8d3ae99a771ba9892f00e134fe9c340af0",
+  "workflowHash": "36d5bb2b4f75a78478baa8656a744d34c76edec5ae4235ff451e6ebff2f4734f",
   "contractHash": "578971ad252905204aacc1b9ec3134a1b7a50b889a902ed012ec328240aff7dc",
   "assertion": {
     "type": "requestCount",
